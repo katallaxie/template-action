@@ -4,7 +4,7 @@
 GO 					?= go
 GO_TOOL 			?= $(GO) tool
 GO_TEST 			?= $(GO_TOOL) gotest.tools/gotestsum --format pkgname
-GO_RELEASER 		?= $(GO_TOOL) github.com/goreleaser/goreleaser/v2
+GO_RELEASER 		?= $(GO_TOOL) github.com/goreleaser/goreleaser
 
 .PHONY: release
 release: ## Release the project.
@@ -37,11 +37,11 @@ test: fmt vet ## Run tests.
 
 .PHONY: lint
 lint: ## Run lint.
-	$(GO_TOOL) golangci-lint run --timeout 5m -c .golangci.yml
+	$(GO_TOOL) github.com/golangci/golangci-lint/v2/cmd/golangci-lint run --timeout 5m -c .golangci.yml
 
 .PHONY: clean
 clean: ## Remove previous build.
-	@rm -rf .test .dist
+	@rm -rf .test dist
 	@find . -type f -name '*.gen.go' -exec rm {} +
 	@git checkout go.mod
 
