@@ -12,7 +12,7 @@ tool (
 
 require (
 	github.com/sethvargo/go-githubactions v1.3.1
-	github.com/stretchr/testify v1.11.0
+	github.com/stretchr/testify v1.11.1
 )
 
 require (
