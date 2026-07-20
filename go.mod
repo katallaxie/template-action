@@ -1,6 +1,6 @@
 module template
 
-go 1.24
+go 1.25
 
 tool (
 	github.com/golangci/golangci-lint/v2/cmd/golangci-lint
@@ -11,7 +11,7 @@ tool (
 )
 
 require (
-	github.com/sethvargo/go-githubactions v1.3.2
+	github.com/sethvargo/go-githubactions v1.4.0
 	github.com/stretchr/testify v1.11.1
 )
 
